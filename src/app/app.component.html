@@ -1,0 +1,6 @@
+<app-navbar *ngIf="showNavBarAndFooter"></app-navbar>
+  <section style="min-height: 650px; padding-top: 0px; padding-bottom: 0px;">
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
+<app-footer *ngIf="showNavBarAndFooter"></app-footer>
+</section>
+ 

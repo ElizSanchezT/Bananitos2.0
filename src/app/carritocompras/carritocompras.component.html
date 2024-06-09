@@ -1,0 +1,540 @@
+<section>
+
+    <div class="container padding-xlarge">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active link-color" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                <h5>1. Carro de Compras</h5>
+            </button>
+            <button class="nav-link link-color" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                <h5>2. Detalle de Envio</h5>
+            </button>
+            <button class="nav-link link-color" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
+                <h5>3. Opciones de Pago</h5>
+            </button>
+        </div>
+
+        <!-- Contenido de Tabs-->
+        <div class="tab-content" id="nav-tabContent">
+
+            <!--1. Carro de compras-->
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
+                tabindex="0">
+                <div class="container opciones-compra">
+                    <div class="row">
+
+                        <div class="col-md-5 col-lg-4 order-md-last">
+                            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-primary">Resumen</span>
+                                <span class="badge bg-primary rounded-pill">2</span>
+                            </h4>
+                            <div class="detalle-compra1">
+
+                                <ul class="list-group mb-3">
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Sub-Total</h6>
+                                        </div>
+                                        <span class="text-body-secondary">S/ 458.38</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Envio</h6>
+                                        </div>
+                                        <span class="text-body-secondary">GRATIS</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Impuesto</h6>
+                                        </div>
+                                        <span class="text-body-secondary">S/ 100.62</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+                                        <div class="text-success">
+                                            <h6 class="my-0">CodigoPromo</h6>
+                                            <small>UPC2023</small>
+                                        </div>
+                                        <span class="text-success">−S/ 20.00</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Total (PEN))</span>
+                                        <strong>S/ 539.00</strong>
+                                    </li>
+                                </ul>
+
+                                <form class="card p-2">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Código Promocional">
+                                        <button type="submit" class="btn btn-secondary">Buscar</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-7 col-lg-8">
+                            <h4 class="h4 link-color">Detalle de Compra</h4>
+                            <div class="detalle-compra">
+                                <div class="row" style="margin-bottom: 1rem;">
+                                    <div class="col-sm-2">
+                                        <img src="./assets/img/63F370306681E-Calzado-Dama-Cv-Roma.jpg" class="card-resumen"
+                                            alt="...">
+                                    </div>
+
+                                    <div class="col-sm-7 padding-nombre-calzado">
+                                        <h4>Calzado Roma</h4>
+                                        <p style="margin-bottom: 0;">Talla 37 - 1 Und.</p>
+                                        <p>S/ 359.00</p>
+                                    </div>
+
+                                    <div class="col-sm-1">
+                                        <button type="button" class="btn-close btn-black" disabled
+                                            aria-label="Close"></button>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <img src="./assets/img/64B9BB337E186-Calzado-Dama-C-Vero.jpg" class="card-resumen"
+                                            alt="...">
+                                    </div>
+
+                                    <div class="col-sm-7 padding-nombre-calzado">
+                                        <h4>Calzado Vero</h4>
+                                        <p style="margin-bottom: 0;">Talla 37 - 1 Und.</p>
+                                        <p>S/ 200.00</p>
+                                    </div>
+
+                                    <div class="col-sm-1">
+                                        <button type="button" class="btn-close btn-black" disabled
+                                            aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn btn-medium btn-primary">Siguiente</div>
+                            <div class="btn btn-medium btn-secondary">Anular</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!--2. Detalle de envio-->
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+
+                <div class="container opciones-compra">
+                    <div class="row">
+
+                        <div class="col-md-5 col-lg-4 order-md-last">
+                            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-primary">Resumen</span>
+                                <span class="badge bg-primary rounded-pill">2</span>
+                            </h4>
+
+                            <div class="detalle-compra1">
+
+                                <div class="row" style="margin-bottom: 1rem;">
+                                    <div class="col-sm-6">
+                                        <img src="./assets/img/63F370306681E-Calzado-Dama-Cv-Roma.jpg" class="card-resumen"
+                                            alt="...">
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <h4>Calzado Roma</h4>
+                                        <p>S/ 359.00</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="./assets/img/64B9BB337E186-Calzado-Dama-C-Vero.jpg" class="card-resumen"
+                                            alt="...">
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <h4>Calzado Vero</h4>
+                                        <p>S/ 200.00</p>
+                                    </div>
+                                </div>
+
+
+                                <hr class="my-4">
+
+                                <ul class="list-group mb-3">
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Sub-Total</h6>
+                                        </div>
+                                        <span class="text-body-secondary">S/ 458.38</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Envio</h6>
+                                        </div>
+                                        <span class="text-body-secondary">GRATIS</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Impuesto</h6>
+                                        </div>
+                                        <span class="text-body-secondary">S/ 100.62</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+                                        <div class="text-success">
+                                            <h6 class="my-0">CodigoPromo</h6>
+                                            <small>UPC2023</small>
+                                        </div>
+                                        <span class="text-success">−S/ 20.00</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Total (PEN))</span>
+                                        <strong>S/ 539.00</strong>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-7 col-lg-8">
+                            <h4 class="h4 link-color">Detalle de Envio</h4>
+                            <!---->
+                            <div class="detalle-compra">
+                                <form class="needs-validation" novalidate>
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <label for="firstName" class="form-label">Nombres</label>
+                                            <input type="text" class="form-control" id="firstName" placeholder=""
+                                                value="" required>
+                                            <div class="invalid-feedback">
+                                                Se requiere un nombre válido.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label for="lastName" class="form-label">Apellidos</label>
+                                            <input type="text" class="form-control" id="lastName" placeholder=""
+                                                value="" required>
+                                            <div class="invalid-feedback">
+                                                Se requiere un apellido válido.
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12">
+                                            <label for="address" class="form-label">Dirección</label>
+                                            <input type="text" class="form-control" id="address" placeholder=""
+                                                required>
+                                            <div class="invalid-feedback">
+                                                Por favor introduzca su direccion de envio.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="address2" class="form-label">Referencia</label>
+                                            <input type="text" class="form-control" id="address2" placeholder="">
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="country" class="form-label">Pais</label>
+                                            <select class="form-select" id="country" required>
+                                                <option value="">Selecciona...</option>
+                                                <option>Perú</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select a valid country.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="state" class="form-label">Provincia</label>
+                                            <select class="form-select" id="state" required>
+                                                <option value="">Selecciona...</option>
+                                                <option>Lima Metropolitana</option>
+                                                <option>Prov. Const. Callao</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid state.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="state" class="form-label">Distrito</label>
+                                            <select class="form-select" id="state" required>
+                                                <option value="">Selecciona...</option>
+                                                <option>Lima</option>
+                                                <option>San Miguel</option>
+                                                <option>Surco</option>
+                                                <option>San Isidro</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid state.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label for="zip" class="form-label">Código Postal</label>
+                                            <input type="text" class="form-control" id="zip" placeholder="" value=""
+                                                required>
+                                            <div class="invalid-feedback">
+                                                Se requiere un nombre válido.
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label for="cellphone" class="form-label">Celular</label>
+                                            <input type="text" class="form-control" id="cellphone" placeholder=""
+                                                value="" required>
+                                            <div class="invalid-feedback">
+                                                Se requiere un nombre válido.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="my-4">
+
+                                    <div class="">
+                                        <div class="row ">
+                                            <div class="col-sm-6 gx-3 col-border-envio">
+                                                <div class="form-check form-check-inline form-envio"
+                                                    style="margin-right: 2rem">
+                                                    <input class="form-check-input" type="radio" name="opciones"
+                                                        id="opcion1" value="option1">
+                                                    <label class="form-check-label" for="opcion1">
+                                                        <strong class="fw-semibold">Envio Gratis</strong>
+                                                        <span class="d-block small opacity-75">2 días hábiles</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-sm-6 col-border-envio">
+                                                <div class="form-check gx-3 form-check-inline form-envio">
+                                                    <input class="form-check-input" type="radio" name="opciones"
+                                                        id="opcion1" value="option1">
+                                                    <label class="form-check-label" for="opcion1">
+                                                        <strong class="fw-semibold">Envio rápido</strong>
+                                                        <span class="d-block small opacity-75">S/ 10.90 - 24
+                                                            horas</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <hr class="my-4">
+
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="same-address">
+                                        <label class="form-check-label" for="same-address">La dirección de envío es la
+                                            misma que mi
+                                            dirección de facturación.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="save-info">
+                                        <label class="form-check-label" for="save-info">Guarda esta información para la
+                                            próxima vez.
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="btn btn-medium btn-primary">Siguiente</div>
+                            <div class="btn btn-medium btn-secondary">Regresar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--3. Opcion pago-->
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+                <div class="container opciones-compra">
+                    <div class="row">
+
+                        <div class="col-md-5 col-lg-4 order-md-last">
+                            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-primary">Resumen</span>
+                                <span class="badge bg-primary rounded-pill">2</span>
+                            </h4>
+
+                            <div class="detalle-compra1">
+
+                                <div class="row" style="margin-bottom: 1rem;">
+                                    <div class="col-sm-6">
+                                        <img src="./assets/img/63F370306681E-Calzado-Dama-Cv-Roma.jpg" class="card-resumen"
+                                            alt="...">
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <h4>Calzado Roma</h4>
+                                        <p>S/ 359.00</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <img src="./assets/img/64B9BB337E186-Calzado-Dama-C-Vero.jpg" class="card-resumen"
+                                            alt="...">
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <h4>Calzado Vero</h4>
+                                        <p>S/ 200.00</p>
+                                    </div>
+                                </div>
+
+
+                                <hr class="my-4">
+
+                                <ul class="list-group mb-3">
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Sub-Total</h6>
+                                        </div>
+                                        <span class="text-body-secondary">S/ 458.38</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Envio</h6>
+                                        </div>
+                                        <span class="text-body-secondary">GRATIS</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Impuesto</h6>
+                                        </div>
+                                        <span class="text-body-secondary">S/ 100.62</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+                                        <div class="text-success">
+                                            <h6 class="my-0">CodigoPromo</h6>
+                                            <small>UPC2023</small>
+                                        </div>
+                                        <span class="text-success">−S/ 20.00</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>Total (PEN))</span>
+                                        <strong>S/ 539.00</strong>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-7 col-lg-8">
+                            <h4 class="h4 link-color">Método de Pago</h4>
+                            <!---->
+                            <div class="detalle-compra">
+
+                                <div class="form-style">
+                                    <form class="needs-validatio" synovalidate>
+                                        <div class="my-3">
+                                            <div class="form-check">
+                                                <input id="credit" name="paymentMethod" type="radio"
+                                                    class="form-check-input" checked required>
+                                                <label class="form-check-label" for="credit">
+                                                    <strong>Tarjeta de Débito / Crédito</strong>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row gy-3">
+                                            <div class="col-md-6">
+                                                <label for="cc-number" class="form-label">Número de Tarjeta</label>
+                                                <input type="text" class="form-control" id="cc-number"
+                                                    placeholder="0000 0000 0000 000" required>
+                                                <div class="invalid-feedback">
+                                                    Credit card number is required
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <label for="cc-expiration" class="form-label">Fecha Expiración</label>
+                                                <input type="text" class="form-control" id="cc-expiration"
+                                                    placeholder="MM/YY" required>
+                                                <div class="invalid-feedback">
+                                                    Expiration date required
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <label for="cc-cvv" class="form-label">CVV</label>
+                                                <input type="text" class="form-control" id="cc-cvv" placeholder="***"
+                                                    required>
+                                                <div class="invalid-feedback">
+                                                    Security code required
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <label for="cc-name" class="form-label">Nombre en la Tajeta</label>
+                                                <input type="text" class="form-control" id="cc-name"
+                                                    placeholder="Branny Ruiz" required>
+                                                <div class="invalid-feedback">
+                                                    Name on card is required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <hr class="my-4">
+
+                                <div class="form-style">
+                                    <div class="row gy-3">
+                                        <div class="col-md-8">
+                                            <form class="needs-validatio" synovalidate>
+                                                <div class="my-3">
+                                                    <div class="form-check">
+                                                        <input id="paypal" name="paymentMethod" type="radio"
+                                                            class="form-check-input" required>
+                                                        <label class="form-check-label" for="paypal">
+                                                            <strong>PayPal</strong>
+                                                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                                                Deleniti quasi non cumque,
+                                                                sed sit id, corporis laudantium unde dolor, provident
+                                                                quam aut delectus ipsam magnam
+                                                                molestiae nesciunt placeat consectetur expedita?</p>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="col-md-4 align-items-center">
+                                            <img src="./assets/img/paypal.png" alt="" style="width: 10rem;">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="btn btn-medium btn-primary" onclick="location.href='./cargando.html'">
+                                Pagar Ahora
+                            </div>
+                            <div class="btn btn-medium btn-secondary" onclick="location.href='#nav-profile'">Regresar
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+ 
+ 
