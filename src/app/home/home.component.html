@@ -58,110 +58,30 @@
         </div>
         <div class="swiper product-swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div *ngFor="let p of products" class="swiper-slide">
               <div class="product-card position-relative">
                 <div class="image-holder sale-container">
-                  <img src="assets/img/product-item11.jpg" alt="product-item" class="img-fluid">
+                  <img src="{{p.imageUrl}}" alt="product-item" class="img-fluid">
                   <div class="product-text">
-                    <p>25%</p>   
+                    <p>{{p.discount}}%</p>   
                   </div>
                 </div>
+
                 <div class="cart-concern position-absolute">
                   <div class="cart-button d-flex">
-                    <a href="#" class="btn btn-medium btn-black">Agregar al carro<svg class="cart-outline"><use xlink:href="#cart-outline"></use></svg></a>
+                    <button class="btn btn-medium btn-black" (click)="__agregar_producto(p.id)">
+                      Agregar al carro<svg class="cart-outline"><use xlink:href="#cart-outline"></use></svg>
+                    </button>
                   </div>
                 </div>
                 <div class="card-detail d-flex justify-content-between align-items-baseline pt-3" href="detalle2.html">
                   <h3 class="card-title text-uppercase">
-                    <a href="detalle2.html">Calzado Sofía</a>
+                    <a href="detalle2.html">{{p.name}}</a>
                   </h3>
                   <div>
-                    <span class="item-price original-price">S/160</span>
-                    <span class="item-price text-primary">S/120</span>
+                    <span class="item-price original-price">S/{{p.price}}</span>
+                    <span class="item-price text-primary">S/{{p.discountedPrice}}</span>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-card position-relative">
-                <div class="image-holder">
-                  <img src="assets/img/product-item12.jpg" alt="product-item" class="img-fluid">
-                  <div class="product-text">
-                    <p>Novedad</p>   
-                  </div>
-                </div>
-                <div class="cart-concern position-absolute">
-                  <div class="cart-button d-flex">
-                    <a href="#" class="btn btn-medium btn-black">Agregar al carro<svg class="cart-outline"><use xlink:href="#cart-outline"></use></svg></a>
-                  </div>
-                </div>
-                <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                  <h3 class="card-title text-uppercase">
-                    <a href="detalle2.html">Calzado Amelia</a>
-                  </h3>
-                  <span class="item-price text-primary">S/150</span>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-card position-relative">
-                <div class="image-holder">
-                  <img src="assets/img/product-item13.jpg" alt="product-item" class="img-fluid">
-                  <div class="product-text">
-                    <p>50%</p>   
-                  </div>
-                </div>
-                <div class="cart-concern position-absolute">
-                  <div class="cart-button d-flex">
-                    <a href="#" class="btn btn-medium btn-black">Agregar al carro<svg class="cart-outline"><use xlink:href="#cart-outline"></use></svg></a>
-                  </div>
-                </div>
-                <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                  <h3 class="card-title text-uppercase">
-                    <a href="detalle2.html">Botas Marcela</a>
-                  </h3>
-                  <span class="item-price original-price">S/400</span>
-                  <span class="item-price text-primary">S/200</span>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-card position-relative">
-                <div class="image-holder">
-                  <img src="assets/img/product-item14.jpg" alt="product-item" class="img-fluid">
-                  <div class="product-text">
-                    <p>16%</p>   
-                  </div>
-                </div>
-                <div class="cart-concern position-absolute">
-                  <div class="cart-button d-flex">
-                    <a href="detalle2.html" class="btn btn-medium btn-black">Agregar al carro<svg class="cart-outline"><use xlink:href="#cart-outline"></use></svg></a>
-                  </div>
-                </div>
-                <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                  <h3 class="card-title text-uppercase">
-                    <a href="detalle2.html">Calzado Mónica</a>
-                  </h3>
-                  <span class="item-price original-price">S/120</span>
-                  <span class="item-price text-primary">S/100</span>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-card position-relative">
-                <div class="image-holder">
-                  <img src="assets/img/product-item15.jpg" alt="product-item" class="img-fluid">
-                </div>
-                <div class="cart-concern position-absolute">
-                  <div class="cart-button d-flex">
-                    <a href="#" class="btn btn-medium btn-black">Agregar al carro<svg class="cart-outline"><use xlink:href="#cart-outline"></use></svg></a>
-                  </div>
-                </div>
-                <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                  <h3 class="card-title text-uppercase">
-                    <a href="#">Tacos Isabel</a>
-                  </h3>
-                  <span class="item-price text-primary">S/ 125</span>
                 </div>
               </div>
             </div>

@@ -37,19 +37,13 @@
                                         <div>
                                             <h6 class="my-0">Sub-Total</h6>
                                         </div>
-                                        <span class="text-body-secondary">S/ 458.38</span>
+                                        <span class="text-body-secondary">S/ {{subtotal}}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between lh-sm">
                                         <div>
                                             <h6 class="my-0">Envio</h6>
                                         </div>
                                         <span class="text-body-secondary">GRATIS</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                                        <div>
-                                            <h6 class="my-0">Impuesto</h6>
-                                        </div>
-                                        <span class="text-body-secondary">S/ 100.62</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
                                         <div class="text-success">
@@ -59,8 +53,8 @@
                                         <span class="text-success">−S/ 20.00</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between">
-                                        <span>Total (PEN))</span>
-                                        <strong>S/ 539.00</strong>
+                                        <span>Total (PEN)</span>
+                                        <strong>S/ {{subtotal}}</strong>
                                     </li>
                                 </ul>
 
@@ -77,40 +71,20 @@
                         <div class="col-md-7 col-lg-8">
                             <h4 class="h4 link-color">Detalle de Compra</h4>
                             <div class="detalle-compra">
-                                <div class="row" style="margin-bottom: 1rem;">
+                                <div *ngFor="let p of products" class="row" style="margin-bottom: 1rem;">
                                     <div class="col-sm-2">
-                                        <img src="./assets/img/63F370306681E-Calzado-Dama-Cv-Roma.jpg" class="card-resumen"
+                                        <img src="{{ p.imageUrl }}" class="card-resumen"
                                             alt="...">
                                     </div>
 
                                     <div class="col-sm-7 padding-nombre-calzado">
-                                        <h4>Calzado Roma</h4>
-                                        <p style="margin-bottom: 0;">Talla 37 - 1 Und.</p>
-                                        <p>S/ 359.00</p>
+                                        <h4>{{ p.name }}</h4>
+                                        <p style="margin-bottom: 0;">Talla {{ p.size }} - {{ p.units }} Und.</p>
+                                        <p>S/ {{ p.price }}</p>
                                     </div>
 
                                     <div class="col-sm-1">
-                                        <button type="button" class="btn-close btn-black" disabled
-                                            aria-label="Close"></button>
-                                    </div>
-
-
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                        <img src="./assets/img/64B9BB337E186-Calzado-Dama-C-Vero.jpg" class="card-resumen"
-                                            alt="...">
-                                    </div>
-
-                                    <div class="col-sm-7 padding-nombre-calzado">
-                                        <h4>Calzado Vero</h4>
-                                        <p style="margin-bottom: 0;">Talla 37 - 1 Und.</p>
-                                        <p>S/ 200.00</p>
-                                    </div>
-
-                                    <div class="col-sm-1">
-                                        <button type="button" class="btn-close btn-black" disabled
+                                        <button type="button" class="btn-close btn-black" (click)="__eliminar_producto(p.id)"
                                             aria-label="Close"></button>
                                     </div>
                                 </div>
