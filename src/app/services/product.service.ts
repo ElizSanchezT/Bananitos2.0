@@ -10,4 +10,6 @@ export class ProductService {
   __getProducts() {
     return this.http.get("https://localhost:7125/Product/List", {responseType: 'json'});
   }
+
+   
 }
