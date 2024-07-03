@@ -12,6 +12,10 @@ export class CartService {
     return this.http.get("https://localhost:7125/Cart/User/" + userId, {responseType: 'json'});
   }
 
+  __getCoupon(code: string) {
+    return this.http.get("https://localhost:7125/Cart/Cupon?cupon=" + code, {responseType: 'json'});
+  }
+
   __addProduct(productId: number, selectedSize: number, units: number){
     return this.http.post(`https://localhost:7125/Cart/AddProduct?productId=${productId}&selectedSize=${selectedSize}&units=${units}`,"");
   }

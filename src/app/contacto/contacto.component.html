@@ -1,0 +1,39 @@
+<div class="container" style="padding-top: 120px;">
+    <h2>Contactenos</h2>
+    <p>
+        Si desea nuestros servicios dejenos sus datos y comentarios completando el siguiente formulario ó visite nuestras oficinas
+    </p>
+    <div class="row">
+        <div class="col-4">
+            <form [formGroup]="contactusForm">
+                <div class="form-group">
+                    <input type="text" formControlName="nombre" placeholder="Ingrese nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="apellidos" placeholder="Ingrese apellido" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="email" formControlName="email" placeholder="Ingrese correo" class="form-control">
+                </div>
+                <div class="form-group">
+                    <textarea formControlName="comentarios" placeholder="Ingrese comentario" class="form-control" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <button (click)="Submit()" class="btn btn-primary">Enviar</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-8">
+            <div style="width: 100%">
+                <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Peru,%20Lima,%20San%20Miguel,%20Londres%20167+(Mi%20casa)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+                  
+                </iframe>
+            </div>
+            
+        </div>
+   
+    </div>
+</div>
+<br>
+<br>
+<br>

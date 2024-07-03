@@ -28,7 +28,7 @@
                         <div class="col-md-5 col-lg-4 order-md-last">
                             <h4 class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="text-primary">Resumen</span>
-                                <span class="badge bg-primary rounded-pill">2</span>
+                                <span class="badge bg-primary rounded-pill">{{productCount}}</span>
                             </h4>
                             <div class="detalle-compra1">
 
@@ -48,20 +48,20 @@
                                     <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
                                         <div class="text-success">
                                             <h6 class="my-0">CodigoPromo</h6>
-                                            <small>UPC2023</small>
+                                            <small>{{coupon}}</small>
                                         </div>
-                                        <span class="text-success">−S/ 20.00</span>
+                                        <span class="text-success">−S/ {{couponDiscount}}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between">
                                         <span>Total (PEN)</span>
-                                        <strong>S/ {{subtotal}}</strong>
+                                        <strong>S/ {{total}}</strong>
                                     </li>
                                 </ul>
 
                                 <form class="card p-2">
                                     <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Código Promocional">
-                                        <button type="submit" class="btn btn-secondary">Buscar</button>
+                                        <input type="text" class="form-control" placeholder="Código Promocional" name="coupon" [(ngModel)]="coupon">
+                                        <button type="submit" class="btn btn-secondary" (click)="__obtener_cupon()">Buscar</button>
                                     </div>
                                 </form>
                             </div>
@@ -71,6 +71,9 @@
                         <div class="col-md-7 col-lg-8">
                             <h4 class="h4 link-color">Detalle de Compra</h4>
                             <div class="detalle-compra">
+                                <div *ngIf="!hasProducts">
+                                    <h3>Su carrito de compras está vacío</h3>   
+                               </div>
                                 <div *ngFor="let p of products" class="row" style="margin-bottom: 1rem;">
                                     <div class="col-sm-2">
                                         <img src="{{ p.imageUrl }}" class="card-resumen"
@@ -89,7 +92,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="btn btn-medium btn-primary">Siguiente</div>
+                            <div class="btn btn-medium btn-primary" (click)="goToNextTab('nav-profile-tab')">Siguiente</div>
                             <div class="btn btn-medium btn-secondary">Anular</div>
                         </div>
 
@@ -106,34 +109,25 @@
                         <div class="col-md-5 col-lg-4 order-md-last">
                             <h4 class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="text-primary">Resumen</span>
-                                <span class="badge bg-primary rounded-pill">2</span>
+                                <span class="badge bg-primary rounded-pill">{{productCount }}</span>
                             </h4>
 
-                            <div class="detalle-compra1">
+                            <div class="detalle-compra1" >
 
-                                <div class="row" style="margin-bottom: 1rem;">
+                                <div class="row" style="margin-bottom: 1rem;" *ngFor="let p of products">
                                     <div class="col-sm-6">
-                                        <img src="./assets/img/63F370306681E-Calzado-Dama-Cv-Roma.jpg" class="card-resumen"
+                                        <img src="{{p.imageUrl}}" class="card-resumen"
                                             alt="...">
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <h4>Calzado Roma</h4>
-                                        <p>S/ 359.00</p>
+                                        <h4>{{p.name}}</h4>
+                                        <p style="margin-bottom: 0;">Talla {{ p.size }} - {{ p.units }} Und.</p>
+                                        <p>S/{{p.price}}</p>
                                     </div>
                                 </div>
-
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <img src="./assets/img/64B9BB337E186-Calzado-Dama-C-Vero.jpg" class="card-resumen"
-                                            alt="...">
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <h4>Calzado Vero</h4>
-                                        <p>S/ 200.00</p>
-                                    </div>
-                                </div>
+                                
+                                
 
 
                                 <hr class="my-4">
@@ -143,7 +137,7 @@
                                         <div>
                                             <h6 class="my-0">Sub-Total</h6>
                                         </div>
-                                        <span class="text-body-secondary">S/ 458.38</span>
+                                        <span class="text-body-secondary">S/ {{subtotal}}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between lh-sm">
                                         <div>
@@ -160,13 +154,13 @@
                                     <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
                                         <div class="text-success">
                                             <h6 class="my-0">CodigoPromo</h6>
-                                            <small>UPC2023</small>
+                                            <small>{{coupon}}</small>
                                         </div>
-                                        <span class="text-success">−S/ 20.00</span>
+                                        <span class="text-success">−S/ {{couponDiscount}}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between">
                                         <span>Total (PEN))</span>
-                                        <strong>S/ 539.00</strong>
+                                        <strong>S/ {{total + 100.62}}</strong>
                                     </li>
                                 </ul>
 
@@ -319,7 +313,7 @@
                                 </form>
                             </div>
 
-                            <div class="btn btn-medium btn-primary">Siguiente</div>
+                            <div class="btn btn-medium btn-primary" (click)="goToNextTab('nav-contact-tab')">Siguiente</div>
                             <div class="btn btn-medium btn-secondary">Regresar</div>
                         </div>
                     </div>
@@ -334,32 +328,23 @@
                         <div class="col-md-5 col-lg-4 order-md-last">
                             <h4 class="d-flex justify-content-between align-items-center mb-3">
                                 <span class="text-primary">Resumen</span>
-                                <span class="badge bg-primary rounded-pill">2</span>
+                                <span class="badge bg-primary rounded-pill">{{productCount}}</span>
                             </h4>
 
                             <div class="detalle-compra1">
 
                                 <div class="row" style="margin-bottom: 1rem;">
-                                    <div class="col-sm-6">
-                                        <img src="./assets/img/63F370306681E-Calzado-Dama-Cv-Roma.jpg" class="card-resumen"
-                                            alt="...">
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <h4>Calzado Roma</h4>
-                                        <p>S/ 359.00</p>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <img src="./assets/img/64B9BB337E186-Calzado-Dama-C-Vero.jpg" class="card-resumen"
-                                            alt="...">
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <h4>Calzado Vero</h4>
-                                        <p>S/ 200.00</p>
+                                    <div class="row" style="margin-bottom: 1rem;" *ngFor="let p of products">
+                                        <div class="col-sm-6">
+                                            <img src="{{p.imageUrl}}" class="card-resumen"
+                                                alt="...">
+                                        </div>
+    
+                                        <div class="col-sm-6">
+                                            <h4>{{p.name}}</h4>
+                                            <p style="margin-bottom: 0;">Talla {{ p.size }} - {{ p.units }} Und.</p>
+                                            <p>S/{{p.price}}</p>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -371,7 +356,7 @@
                                         <div>
                                             <h6 class="my-0">Sub-Total</h6>
                                         </div>
-                                        <span class="text-body-secondary">S/ 458.38</span>
+                                        <span class="text-body-secondary">S/ {{subtotal}}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between lh-sm">
                                         <div>
@@ -388,13 +373,13 @@
                                     <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
                                         <div class="text-success">
                                             <h6 class="my-0">CodigoPromo</h6>
-                                            <small>UPC2023</small>
+                                            <small>{{coupon}}</small>
                                         </div>
-                                        <span class="text-success">−S/ 20.00</span>
+                                        <span class="text-success">−S/ {{couponDiscount}}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between">
                                         <span>Total (PEN))</span>
-                                        <strong>S/ 539.00</strong>
+                                        <strong>S/ {{total  +100.62}}</strong>
                                     </li>
                                 </ul>
 
@@ -490,11 +475,9 @@
                                     </div>
                                 </div>
 
-
-
                             </div>
 
-                            <div class="btn btn-medium btn-primary" onclick="location.href='./cargando.html'">
+                            <div class="btn btn-medium btn-primary" (click)="__compra_exitosa()">
                                 Pagar Ahora
                             </div>
                             <div class="btn btn-medium btn-secondary" onclick="location.href='#nav-profile'">Regresar

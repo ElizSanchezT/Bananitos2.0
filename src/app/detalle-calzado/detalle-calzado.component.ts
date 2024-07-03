@@ -15,8 +15,9 @@ import { CartService } from '../services/cart.service';
 export class DetalleCalzadoComponent{
   mostrarMensaje: boolean = false;
   quantity: number = 1; // Valor inicial
+  selectedSize: number = 35;
 
-  increment(): void {
+ increment(): void {
     this.quantity++;
   }
 
@@ -42,7 +43,7 @@ export class DetalleCalzadoComponent{
 
   __agregar_producto(productId: number): void {
     console.log(productId);
-    this.cs.__addProduct(productId, 35, 1).subscribe((rest: any) => {
+    this.cs.__addProduct(productId, this.selectedSize, this.quantity).subscribe((rest: any) => {
       if (rest.isSuccess) {
         console.log('Producto agregado al carrito exitosamente');
         this.mostrarMensaje = true; // Mostrar el mensaje

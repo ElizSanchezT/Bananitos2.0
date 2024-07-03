@@ -1,0 +1,21 @@
+.calzaditos-container {
+    max-width: 800px;
+    margin: 40px auto; /* Margen arriba y abajo de 40px, centrado horizontalmente */
+   
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .calzaditos-container h2 {
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .calzaditos-container p {
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 20px; /* Margen abajo para separar párrafos */
+  }
