@@ -25,7 +25,7 @@ export const routes: Routes = [
         path: 'login', component: LoginComponent
     },
     {
-        path: 'detalle', component: DetalleCalzadoComponent
+        path: 'detalle/:id', component: DetalleCalzadoComponent
     },
     {
         path: '**', redirectTo: 'home'

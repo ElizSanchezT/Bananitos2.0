@@ -11,5 +11,7 @@ export class ProductService {
     return this.http.get("https://localhost:7125/Product/List", {responseType: 'json'});
   }
 
-   
+  __getProductsById(id: string| null) {
+    return this.http.get(`https://localhost:7125/Product/${id}`, { responseType: 'json' });
+  }
 }

@@ -1,23 +1,26 @@
 <div id="content" role="main" style="padding-top: 8rem;">
-    <div class="container">
+  <div class="alert alert-success mt-3" *ngIf="mostrarMensaje">
+    Producto agregado al carrito correctamente.
+  </div>
+    <div class="container" *ngIf="product">
       <div class="row" >
-        <div class="col-md-7 mb-7 mb-md-0">
+        <div class="col-md-6">
           <div class="pe-md-4">
             <div class="card-pinned">
               <div class="product-card position-relative">
                 <div class="image-holder sale-container">
-                  <img src="assets/img/63F4D7DB9FD95-Calzado-Dama-Cv-Roma.jpg" alt="product-item" class="img-fluid">
+                  <img src="{{product.imageUrl}}" alt="product-item" class="img-fluid">
                 </div>
               </div>
             </div>
           </div>
         </div>
         <!-- End Col -->
-  
-        <div class="col-md-5">
+       
+        <div class="col-md-6">
           <!-- Heading -->
-          <div class="mb-5">
-            <h1 class="h2">Calzado Dama Cv-Roma Negro</h1>
+          <div *ngIf="product" class="mb-5">
+            <h1 class="h2">{{product.name}}</h1>
             <!-- Estrellas -->
             <div class="rating">
               <svg class="star star-fill">
@@ -43,8 +46,8 @@
             <div class="mb-5">
               <span class="d-block mb-2">Precio:</span>
               <div class="d-flex align-items-center">
-                <h3 class="mb-0">S/140.00</h3>
-                <span class="ms-2"><del>S/179.00</del></span>
+                <h3 class="mb-0">S/{{product.price}}</h3>
+                <span class="ms-2"><del>S/{{product.discountedPrice}}</del></span>
               </div>
             </div>
             <!-- End Price -->
@@ -53,26 +56,16 @@
               <div class="js-quantity-counter row align-items-center">
                 <div class="col">
                   <span class="d-block small">Selecciona la catidad</span>
-                  <input class="js-result form-control form-control-quantity-counter" type="text" value="1">
+                  <div class="input-group">
+                    <button class="btn btn-outline-secondary" type="button" (click)="decrement()">-</button>
+                    <input type="number" class="form-control" [(ngModel)]="quantity" min="1">
+                    <button class="btn btn-outline-secondary" type="button" (click)="increment()">+</button>
+                  </div>
+                  <!-- <input class="js-result form-control form-control-quantity-counter" type="text" value="1"> -->
                 </div>
                 <!-- End Col -->
   
-                <div class="col-auto">
-                  <a class="js-minus btn btn-outline-secondary btn-xs btn-icon rounded-circle" href="javascript:;">
-                    <svg width="8" height="2" viewBox="0 0 8 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M0 1C0 0.723858 0.223858 0.5 0.5 0.5H7.5C7.77614 0.5 8 0.723858 8 1C8 1.27614 7.77614 1.5 7.5 1.5H0.5C0.223858 1.5 0 1.27614 0 1Z"
-                        fill="currentColor"></path>
-                    </svg>
-                  </a>
-                  <a class="js-plus btn btn-outline-secondary btn-xs btn-icon rounded-circle" href="javascript:;">
-                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M4 0C4.27614 0 4.5 0.223858 4.5 0.5V3.5H7.5C7.77614 3.5 8 3.72386 8 4C8 4.27614 7.77614 4.5 7.5 4.5H4.5V7.5C4.5 7.77614 4.27614 8 4 8C3.72386 8 3.5 7.77614 3.5 7.5V4.5H0.5C0.223858 4.5 0 4.27614 0 4C0 3.72386 0.223858 3.5 0.5 3.5H3.5V0.5C3.5 0.223858 3.72386 0 4 0Z"
-                        fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </div>
+                
                 <!-- End Col -->
               </div>
               <!-- End Row -->
@@ -83,10 +76,7 @@
             <div class="mb-5">
               <select class="form-select" aria-label="Default select example">
                 <option selected>Selecciones la talla</option>
-                <option value="1">35</option>
-                <option value="2">36</option>
-                <option value="3">37</option>
-                <option value="3">38</option>
+                <option *ngFor="let size of product.sizes" [value]="size">{{ size }}</option>
               </select>
             </div>
             <!-- End Talla-->
@@ -96,7 +86,7 @@
           </div>
           <!-- End Heading -->
           <div class="d-grid mb-4">
-            <button type="button" class="btn btn-primary btntransition">Agregar al Carrito</button>
+            <button type="button" class="btn btn-primary btntransition" (click)="__agregar_producto(product.id)">Agregar al Carrito</button>
           </div>
         </div>
         <!-- End Col -->
@@ -105,124 +95,7 @@
     </div>
   </div>
   
-  <section id="smart-watches" class="product-store padding-medium position-relative">
-    <div class="container">
-      <div class="row">
-        <div class="display-header d-flex justify-content-between pb-3">
-          <h2 class="display-7 text-dark text-uppercase">Productos Similares</h2>
-          <div class="btn-right">
-            <a href="./ofertas" class="btn btn-medium btn-normal text-uppercase">Ver más</a>
-          </div>
-        </div>
-        <div class="swiper product-watch-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="product-card position-relative">
-                <div class="image-holder">
-                  <img src="assets/img/64B9BB337E186-Calzado-Dama-C-Vero.jpg" alt="product-item" class="img-fluid">
-                </div>
-                <div class="cart-concern position-absolute">
-                  <div class="cart-button d-flex">
-                    <a href="#" class="btn btn-medium btn-black">Agregar al carrito<svg class="cart-outline">
-                        <use xlink:href="#cart-outline"></use>
-                      </svg></a>
-                  </div>
-                </div>
-                <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                  <h3 class="card-title text-uppercase">
-                    <a href="#">Calzado Damas Vestir C Vero Negro</a>
-                  </h3>
-                  <span class="item-price text-primary">S/.99.90</span>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-card position-relative">
-                <div class="image-holder">
-                  <img src="assets/img/632E315328ECE.jpg" alt="product-item" class="img-fluid">
-                </div>
-                <div class="cart-concern position-absolute">
-                  <div class="cart-button d-flex">
-                    <a href="#" class="btn btn-medium btn-black">Agregar al carrito<svg class="cart-outline">
-                        <use xlink:href="#cart-outline"></use>
-                      </svg></a>
-                  </div>
-                </div>
-                <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                  <h3 class="card-title text-uppercase">
-                    <a href="#">Calzado Dama Ch 9910 Negro</a>
-                  </h3>
-                  <span class="item-price text-primary">S/.79.90</span>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-card position-relative">
-                <div class="image-holder">
-                  <img src="assets/img/636C1D5F17BD7.jpg" alt="product-item" class="img-fluid">
-                </div>
-                <div class="cart-concern position-absolute">
-                  <div class="cart-button d-flex">
-                    <a href="#" class="btn btn-medium btn-black">Agregar al carrito<svg class="cart-outline">
-                        <use xlink:href="#cart-outline"></use>
-                      </svg></a>
-                  </div>
-                </div>
-                <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                  <h3 class="card-title text-uppercase">
-                    <a href="#">Calzado Sofia</a>
-                  </h3>
-                  <span class="item-price text-primary">S/.120</span>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-card position-relative">
-                <div class="image-holder">
-                  <img src="assets/img/636C1D7B4B895.jpg" alt="product-item" class="img-fluid">
-                </div>
-                <div class="cart-concern position-absolute">
-                  <div class="cart-button d-flex">
-                    <a href="#" class="btn btn-medium btn-black">Agregar al carrito<svg class="cart-outline">
-                        <use xlink:href="#cart-outline"></use>
-                      </svg></a>
-                  </div>
-                </div>
-                <div class="card-detail d-flex justify-content-between align-items-baseline pt-3">
-                  <h3 class="card-title text-uppercase">
-                    <a href="#">Calzado Dama VEstir Cv 356 Negro</a>
-                  </h3>
-                  <span class="item-price text-primary">S/.145</span>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-card position-relative">
-                <div class="image-holder">
-                  <img src="assets/img/C34OFIRLPXSH2.jpg" alt="product-item" class="img-fluid">
-                </div>
-                <div class="cart-concern position-absolute">
-                  <div class="cart-button d-flex">
-                    <a href="#" class="btn btn-medium btn-black">Agregar al carrito<svg class="cart-outline">
-                        <use xlink:href="#cart-outline"></use>
-                      </svg></a>
-                  </div>
-                </div>
-                <div class="card-detail d-flex justify-content-between pt-3">
-                  <h3 class="card-title text-uppercase">
-                    <a href="#">Calzado Dama Casual Ch 5a10x Negro</a>
-                  </h3>
-                  <span class="item-price text-primary">S/.49.90</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-    </div>
-    <div class="swiper-pagination position-absolute text-center"></div>
-  </section>
+
   <div class="container">
     <hr>
   </div>
