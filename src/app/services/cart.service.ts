@@ -23,4 +23,9 @@ export class CartService {
   __removeProduct(userId: number, productId: number){
     return this.http.post(`https://localhost:7125/Cart/RemoveProduct?userId=${userId}&productId=${productId}`,"");
   }
+
+  __emptyCart(userId:number){
+    return this.http.post(`https://localhost:7125/Cart/Empty?userId=${userId}`,"");
+  }
+
 }

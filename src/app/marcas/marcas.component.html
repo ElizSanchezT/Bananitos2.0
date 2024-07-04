@@ -40,7 +40,8 @@
                 <div class="swiper-slide shoe-item {{ p.brand }}">
                   <div class="product-card position-relative">
                     <div class="image-holder sale-container">
-                      <img src={{p.imageUrl}} alt="product-item" class="img-fluid">
+                      <a [routerLink]="['/detalle', p.id]"><img src={{p.imageUrl}} alt="product-item" class="img-fluid"></a>
+                      
                       <div class="product-text">
                         <p>{{p.discount}}%</p>
                       </div>

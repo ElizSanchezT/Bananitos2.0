@@ -64,12 +64,13 @@
             <div *ngFor="let p of products" class="swiper-slide">
               <div class="product-card position-relative">
                 <div class="image-holder sale-container">
-                  <img src="{{p.imageUrl}}" alt="product-item" class="img-fluid">
+                  <a [routerLink]="['/detalle', p.id]">
+                    <img src="{{p.imageUrl}}" alt="product-item" class="img-fluid">
+                  </a>
                   <div class="product-text">
                     <p>{{p.discount}}%</p>   
                   </div>
                 </div>
-
                 <div class="cart-concern position-absolute">
                   <div class="cart-button d-flex">
                     <button class="btn btn-medium btn-black" (click)="__agregar_producto(p.id)">

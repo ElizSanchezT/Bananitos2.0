@@ -37,7 +37,7 @@
                                         <div>
                                             <h6 class="my-0">Sub-Total</h6>
                                         </div>
-                                        <span class="text-body-secondary">S/ {{subtotal}}</span>
+                                        <span class="text-body-secondary">S/ {{subtotal | number: '1.2-2'}}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between lh-sm">
                                         <div>
@@ -45,16 +45,17 @@
                                         </div>
                                         <span class="text-body-secondary">GRATIS</span>
                                     </li>
-                                    <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+                                    <li *ngIf="hasCoupon" class="list-group-item d-flex justify-content-between bg-body-tertiary">
                                         <div class="text-success">
                                             <h6 class="my-0">CodigoPromo</h6>
                                             <small>{{coupon}}</small>
                                         </div>
-                                        <span class="text-success">−S/ {{couponDiscount}}</span>
+                                        <span class="text-success">−S/ {{couponDiscount | number: '1.2-2'}}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between">
+                        
                                         <span>Total (PEN)</span>
-                                        <strong>S/ {{total}}</strong>
+                                        <strong>S/ {{total | number: '1.2-2'}}</strong>
                                     </li>
                                 </ul>
 
@@ -93,7 +94,7 @@
                                 </div>
                             </div>
                             <div class="btn btn-medium btn-primary" (click)="goToNextTab('nav-profile-tab')">Siguiente</div>
-                            <div class="btn btn-medium btn-secondary">Anular</div>
+                            <div class="btn btn-medium btn-secondary" (click)="__vaciar_carrito()">Anular</div>
                         </div>
 
                     </div>
@@ -145,12 +146,7 @@
                                         </div>
                                         <span class="text-body-secondary">GRATIS</span>
                                     </li>
-                                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                                        <div>
-                                            <h6 class="my-0">Impuesto</h6>
-                                        </div>
-                                        <span class="text-body-secondary">S/ 100.62</span>
-                                    </li>
+
                                     <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
                                         <div class="text-success">
                                             <h6 class="my-0">CodigoPromo</h6>
@@ -160,7 +156,7 @@
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between">
                                         <span>Total (PEN))</span>
-                                        <strong>S/ {{total + 100.62}}</strong>
+                                        <strong>S/ {{total}}</strong>
                                     </li>
                                 </ul>
 
@@ -364,12 +360,7 @@
                                         </div>
                                         <span class="text-body-secondary">GRATIS</span>
                                     </li>
-                                    <li class="list-group-item d-flex justify-content-between lh-sm">
-                                        <div>
-                                            <h6 class="my-0">Impuesto</h6>
-                                        </div>
-                                        <span class="text-body-secondary">S/ 100.62</span>
-                                    </li>
+
                                     <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
                                         <div class="text-success">
                                             <h6 class="my-0">CodigoPromo</h6>
@@ -379,7 +370,7 @@
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between">
                                         <span>Total (PEN))</span>
-                                        <strong>S/ {{total  +100.62}}</strong>
+                                        <strong>S/ {{total}}</strong>
                                     </li>
                                 </ul>
 

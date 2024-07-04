@@ -99,6 +99,10 @@ export class CarritocomprasComponent {
     this.subtotal = 0;
     this.total = 0;
     this.hasProducts = false;
+    this.cs.__emptyCart(1).subscribe((rest: any) => {
+
+    })
+    
 
     // Navegar a la página de compra exitosa
     this.router.navigate(['/compraExitosa']);
@@ -108,6 +112,15 @@ export class CarritocomprasComponent {
     return this.products.length;
   }
   
+
+  __vaciar_carrito(){
+    this.cs.__emptyCart(1).subscribe((rest: any) => {
+      if(rest.isSuccess){
+        window.location.reload();
+      }
+    })
+  }
+
   ngOnInit(): void {
     this.__obtener_carrito();
   }  
